@@ -1,8 +1,10 @@
 from fastapi import FastAPI, Request
 from transformers import pipeline
 
-# Load Hugging Face model dynamically (will download into ~/.cache/huggingface by default)
-classifier = pipeline("text-classification", model="neuraxcompany/text-classification-arch")
+classifier = pipeline(
+    "text-classification",
+    model="neuraxcompany/text-classification-arch"
+)
 
 app = FastAPI()
 
